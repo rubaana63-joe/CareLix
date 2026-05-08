@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+</head>
+<style>
+h1{
+    justify-content: center;
+    display: flex;
+    }
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:burlywood;
+    padding:20px;
+    border-radius:12px;
+    box-shadow: -1px -1px 2px 2px gray;
+    transition:0.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:blueviolet;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    margin-bottom:10px;
+}
+
+.card span{
+    display:block;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.card button{
+    padding:10px 20px;
+    border:none;
+    background: blueviolet;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:blueviolet;
+}
+.popup{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:blueviolet;
+    color:white;
+    padding:15px 20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    display:none;
+    animation:slideUp 0.5s ease;
+}
+
+/* Popup animation */
+@keyframes slideUp{
+    from{
+        transform:translateY(50px);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+</style>
+<body>
+    <h1>📦Pharmacy Products</h1>
+    <div class="products">
+
+    <div class="card">
+        <h3>💊 Paracetamol</h3>
+        <p>Used for fever and body pain relief.</p>
+        <span>₹50</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>💉 Insulin Injection</h3>
+        <p>Used for diabetes treatment.</p>
+        <span>₹350</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>🧴 Cough Syrup</h3>
+        <p>Relief from cough and cold.</p>
+        <span>₹90</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>💊 Vitamin C Tablets</h3>
+        <p>Improves immunity and health.</p>
+        <span>₹120</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>🩺 BP Monitor</h3>
+        <p>Digital blood pressure machine.</p>
+        <span>₹1200</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>🧪 Blood Test Kit</h3>
+        <p>Easy health testing at home.</p>
+        <span>₹450</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>👁 Eye Drops</h3>
+        <p>Used for dry and irritated eyes.</p>
+        <span>₹75</span>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <h3>🦷 Dental Gel</h3>
+        <p>Relief from tooth pain.</p>
+        <span>₹65</span>
+        <button>Buy Now</button>
+    </div>
+
+</div>
+<script>
+
+// Select all Buy buttons
+const buyButtons = document.querySelectorAll(".card button");
+
+// Create popup message
+const popup = document.createElement("div");
+popup.className = "popup";
+document.body.appendChild(popup);
+
+// Buy button function
+buyButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Get medicine name
+        const productName =
+        button.parentElement.querySelector("h3").innerText;
+
+        // Change popup text
+        popup.innerText = productName + " added successfully ✔";
+
+        // Show popup
+        popup.style.display = "block";
+
+        // Hide popup after 2 seconds
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 2000);
+
+    });
+
+});
+
+</script>
+</body>
+</html>

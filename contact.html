@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#f8ae72,#ebaa74);
+}
+
+/* Container */
+.contact-container{
+    width:320px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:-1px -1px 2px 2px gray;
+    animation:fadeIn 1s ease;
+}
+
+/* Input */
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-top:20px;
+    font-size:16px;
+}
+
+/* Buttons */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background: burlywood;
+    color:rgb(0, 0, 0);
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:blanchedalmond;
+    transform:scale(1.03);
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+<body>
+
+<div class="contact-container">
+
+    <h1>📞 Contact Us</h1>
+
+    <div class="contact-card">
+
+        <input type="tel"
+        id="phoneInput"
+        placeholder="Enter contact number">
+
+        <button id="saveBtn">
+            Save Contact
+        </button>
+
+        <button id="callBtn">
+            Call Contact
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+// Get elements
+const phoneInput = document.getElementById("phoneInput");
+const saveBtn = document.getElementById("saveBtn");
+const callBtn = document.getElementById("callBtn");
+
+// Save contact in browser storage
+saveBtn.addEventListener("click", () => {
+
+    const number = phoneInput.value;
+
+    if(number === ""){
+        alert("Enter contact number");
+        return;
+    }
+
+    // Save number
+    localStorage.setItem("savedContact", number);
+
+    alert("Contact Saved ✔");
+
+    // Clear input
+    phoneInput.value = "";
+
+});
+
+
+// Call saved contact
+callBtn.addEventListener("click", () => {
+
+    // Get saved number
+    const savedNumber =
+    localStorage.getItem("savedContact");
+
+    if(savedNumber){
+
+        // Open phone call
+        window.location.href =
+        "tel:" + savedNumber;
+
+    }else{
+
+        alert("No saved contact found");
+
+    }
+
+});
+
+
+// Auto load saved contact
+window.addEventListener("load", () => {
+
+    const savedNumber =
+    localStorage.getItem("savedContact");
+
+    if(savedNumber){
+        phoneInput.value = savedNumber;
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>

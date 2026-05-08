@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prescription Upload</title>
+    <link rel="stylesheet" href="prescription.css">
+</head>
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88') no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 10px;
+    color: blueviolet;
+}
+
+.container p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+    height: 70px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: rgb(154, 100, 204);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: blueviolet;
+}
+</style>
+<body>
+
+<div class="container">
+    <h1>Upload Your Prescription</h1>
+    <p>Please upload a valid doctor prescription to order medicines</p>
+
+    <form>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter your number" required>
+
+        <label>Upload Prescription</label>
+        <input type="file" required>
+
+        <label>Additional Notes</label>
+        <textarea placeholder="Write notes (optional)"></textarea>
+
+        <button type="submit">Submit Prescription</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Shope</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styl.css">
+</head>
+<style>
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+html{
+    background: url(img/care.png)no-repeat center/cover;
+    height: 900px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 50px 40px;
+    color: rgb(0, 0, 0);
+}
+
+header .logo-box {
+    font-size: 22px;
+    font-weight: bold;
+}
+nav a {
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+    padding: 12px 18px;
+    border: 12px 8px;
+    border-radius: 8px;
+    box-shadow: -1px -1px 2px 2px gray;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #000000;
+    background: rgb(90, 3, 124);
+    box-shadow: gray;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1580281657527-47c7fbd38b98') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-text button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: blueviolet;
+    box-shadow: -1px -1px 2px 2px gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero-text button:hover {
+    background: rgb(184, 126, 238);
+}
+
+/* Services */
+.services {
+    padding: 50px;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 35px;
+}
+
+.service-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: rgb(149, 68, 224);
+    padding: 25px;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.3s;
+    color: black;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card .h3 a{
+    color: white;
+}
+</style>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-box">
+        </div>
+        <nav>
+            <a href="home.html">🏠Home</a>
+            <a href="Service.html">🚚Services</a>
+            <a href="product.html">📦Products</a>
+            <a href="contact.html">📲Contact</a>
+            <a href="index/index.html">💁‍♂️Login</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Your Health, Our Priority</h1>
+            <p>Trusted pharmacy for medicines and healthcare products</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-box">
+            <div class="card">
+                <h3><a href="Precription.html">📋Precription</a></h3>
+                <p>Get take your Precription Sheet</p>
+            </div>
+            <div class="card">
+                <h3><a href="medic.html">💊 Medicines</a></h3>
+                <p>All types of medicines available</p>
+            </div>
+            <div class="card">
+                <h3><a href="child.html">👶🩺Childrens health Check</a></h3>
+                <p>Health Check for Childrens</p>
+            </div>
+            <div class="card">
+                <h3><a href="health.html">🩺 Health Check</a></h3>
+                <p>Basic health checkup services</p>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

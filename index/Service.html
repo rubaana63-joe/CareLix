@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fast Delivery</title>
+    <link rel="stylesheet" href="delivery.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+/* Header */
+header {
+    background: blueviolet;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Layout */
+.delivery-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* Content */
+.content {
+    max-width: 400px;
+    animation: fadeIn 1s ease;
+}
+
+.content h2 {
+    color: blueviolet;
+    margin-bottom: 10px;
+}
+
+.content ul {
+    margin: 15px 0;
+}
+
+.content li {
+    margin: 8px 0;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    background: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: blueviolet;
+}
+
+/* Animation Area */
+.animation-area {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Road */
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: #333;
+}
+
+/* Bike Animation */
+.bike {
+    position: absolute;
+    bottom: 60px;
+    font-size: 40px;
+    animation: moveBike 3s linear infinite;
+}
+
+/* Keyframes */
+@keyframes moveBike {
+    0% { left: -100px; }
+    100% { left: 100%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
+}
+</style>
+<body>
+
+<header>
+    <h1>🚚 Fast Delivery Service</h1>
+</header>
+
+<section class="delivery-container">
+
+    <!-- Left Content -->
+    <div class="content">
+        <h2>Medicines Delivered in Minutes</h2>
+        <p>Get your medicines delivered safely and quickly at your doorstep.</p>
+
+        <ul>
+            <li>⚡ 30–60 Minutes Delivery</li>
+            <li>📍 Live Order Tracking</li>
+            <li>🛡 Safe & Secure Packaging</li>
+            <li>💊 Trusted Pharmacy Service</li>
+        </ul>
+
+        <button id="orderBtn">Order Now</button>
+    </div>
+</section>
+
+<!-- Order Popup -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+        <h2>Order Placed ✅</h2>
+        <p>Your delivery is on the way!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+</body>
+</html>

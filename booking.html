@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1584515933487-779824d29309') no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container h1 {
+    color: blueviolet;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: gray;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: rgb(168, 120, 212);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: blueviolet;
+}
+</style>
+<body>
+
+<div class="container">
+    <h1>📅 Book Appointment</h1>
+    <p>Fill the form to schedule your child's health check</p>
+
+    <form>
+
+        <label>Parent Name</label>
+        <input type="text" placeholder="Enter parent name" required>
+
+        <label>Child Name</label>
+        <input type="text" placeholder="Enter child name" required>
+
+        <label>Age</label>
+        <input type="number" placeholder="Enter age" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter phone number" required>
+
+        <label>Select Service</label>
+        <select required>
+            <option value="">-- Choose Service --</option>
+            <option>General Checkup</option>
+            <option>Vaccination</option>
+            <option>Growth Monitoring</option>
+        </select>
+
+        <label>Preferred Date</label>
+        <input type="date" required>
+
+        <label>Preferred Time</label>
+        <input type="time" required>
+
+        <label>Additional Notes</label>
+        <textarea placeholder="Optional"></textarea>
+
+        <button type="submit">Confirm Booking</button>
+
+    </form>
+</div>
+
+</body>
+</html>

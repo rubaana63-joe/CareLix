@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicines List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+/* Header */
+header {
+    background: blueviolet;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+}
+/* Search */
+.search-box {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+/* Medicine Grid */
+.medicine-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: burlywood;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: -1px -1px 2px 2px gray;
+}
+
+.card h2 {
+    color: blueviolet;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: blueviolet;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: blueviolet;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+</style>
+<body>
+
+<header>
+    <h1>Medicines Available</h1>
+</header>
+
+<section class="search-box">
+    <input type="text" placeholder="Search medicines...">
+</section>
+
+<section class="medicine-container">
+
+    <!-- Pain Relief -->
+    <div class="card">
+        <h2>Paracetamol</h2>
+        <p>Category: Pain Relief</p>
+        <p>Use: Fever, Headache</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Ibuprofen</h2>
+        <p>Category: Anti-inflammatory</p>
+        <p>Use: Pain, Swelling</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Antibiotics -->
+    <div class="card">
+        <h2>Amoxicillin</h2>
+        <p>Category: Antibiotic</p>
+        <p>Use: Bacterial Infection</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Azithromycin</h2>
+        <p>Category: Antibiotic</p>
+        <p>Use: Respiratory Infection</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Diabetes -->
+    <div class="card">
+        <h2>Metformin</h2>
+        <p>Category: Diabetes</p>
+        <p>Use: Blood Sugar Control</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Cold & Cough -->
+    <div class="card">
+        <h2>Cetirizine</h2>
+        <p>Category: Allergy</p>
+        <p>Use: Cold, Sneezing</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h2>Cough Syrup</h2>
+        <p>Category: Cold & Cough</p>
+        <p>Use: Cough Relief</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Vitamins -->
+    <div class="card">
+        <h2>Vitamin C</h2>
+        <p>Category: Supplement</p>
+        <p>Use: Immunity Boost</p>
+        <button>Add to Cart</button>
+    </div>
+
+</section>
+</body>
+</html>
